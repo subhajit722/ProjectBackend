@@ -1,0 +1,7 @@
+const express = require("express");
+const router = express.Router();
+const { getSummary } = require("../controllers/dashboard.controller");
+const { verifyToken }= require('../middlewares/authMiddleware')
+router.get("/summary", verifyToken, getSummary);
+
+module.exports = router;
